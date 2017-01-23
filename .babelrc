@@ -4,6 +4,6 @@
     "react-hot-loader/babel"
   ],
   "ignore": [
-    "./src/api/index.js"
+    "./src/api/*"
   ]
 }

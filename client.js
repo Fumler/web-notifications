@@ -10,6 +10,12 @@ new WebpackDevServer(webpack(config), {
   hot: true,
   host: ip,
   stats: false,
+  proxy: {
+    '^/api/*': {
+      target: 'http://localhost:8080/api/',
+      secure: false
+    }
+  },
   historyApiFallback: true,
   contentBase: 'public'
 }).listen(port, ip, (err) => {

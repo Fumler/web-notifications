@@ -2,5 +2,8 @@
   "presets": ["es2015", "react", "stage-1"],
   "plugins": [
     "react-hot-loader/babel"
+  ],
+  "ignore": [
+    "./src/api/index.js"
   ]
 }

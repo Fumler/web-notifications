@@ -17,13 +17,13 @@ function action(type, payload = {}) {
 }
 
 export const postList = {
-  request: () => action(POST_LIST.REQUEST, {}),
-  success: (list) => action(POST_LIST.SUCCESS, list),
-  failure: (error) => action(POST_LIST.FAILURE, error)
+  request: () => action(POST_LIST.REQUEST),
+  success: (list) => action(POST_LIST.SUCCESS, { list }),
+  failure: (error) => action(POST_LIST.FAILURE, { error })
 }
 
 export const postCreate = {
-  request: (data) => action(POST_CREATE.REQUEST, data),
-  success: (data) => action(POST_CREATE.SUCCESS, data),
-  failure: (error) => action(POST_CREATE.FAILURE, error)
+  request: (data) => action(POST_CREATE.REQUEST, { data }),
+  success: (data) => action(POST_CREATE.SUCCESS, { data }),
+  failure: (error) => action(POST_CREATE.FAILURE, { error })
 }

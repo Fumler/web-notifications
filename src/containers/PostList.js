@@ -1,21 +1,26 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import { connect } from 'react-redux'
+import { getList } from 'store/selectors'
+import { postList } from 'store/actions' 
 //import { PostList } from 'components'
 
 class PostListContainer extends Component {
   componentDidMount() {
-    axios.get('/api/articles')
-      .then((response) => {
-        console.log(response)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+    this.props.request()
   }
 
   render() {
-    return <div></div>
+    const { list } = this.props
+    return <div>{ list }</div>
   }
 }
 
-export default PostListContainer
+const mapStateToProps = (state) => ({
+  list: getList(state)
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  request: () => dispatch(postList.request())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostListContainer)

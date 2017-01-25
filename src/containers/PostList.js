@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getList } from 'store/selectors'
 import { postList } from 'store/actions' 
-//import { PostList } from 'components'
+import { PostList } from 'components'
 
 class PostListContainer extends Component {
   componentDidMount() {
@@ -11,7 +11,7 @@ class PostListContainer extends Component {
 
   render() {
     const { list } = this.props
-    return <div>{ list }</div>
+    return <PostList {...{ list }} />
   }
 }
 

@@ -26,7 +26,7 @@ const postReducer = (state = initialState, action) => {
 
 const reducer = combineReducers({
   routing,
-  postReducer
+  posts: postReducer
 })
 
 export default reducer

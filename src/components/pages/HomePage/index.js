@@ -6,7 +6,6 @@ import { PostList } from 'containers'
 const HomePage = () => {
   return (
     <PageTemplate header={<Header />}>
-      <h1>Hello, home!</h1>
       <PostList />
     </PageTemplate>
   )

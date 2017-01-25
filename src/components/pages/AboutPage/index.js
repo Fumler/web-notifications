@@ -1,15 +1,13 @@
 import React from 'react'
 
 import { PageTemplate, Header } from 'components'
-import { PostList } from 'containers'
 
-const HomePage = () => {
+const AboutPage = () => {
   return (
     <PageTemplate header={<Header />}>
-      <h1>Hello, home!</h1>
-      <PostList />
+      <h1>Hello, about!</h1>
     </PageTemplate>
   )
 }
 
-export default HomePage
+export default AboutPage

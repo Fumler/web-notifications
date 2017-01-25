@@ -23,9 +23,10 @@ const Content = styled.section`
 
 `
 
-const PageTemplate = ({ header, children, ...props }) => {
+const PageTemplate = ({ header, notification, children, ...props }) => {
   return(
     <Wrapper {...props}>
+      { notification && <div>{notification}</div>}
       <Header>{header}</Header>
       <Content>{children}</Content>
     </Wrapper>

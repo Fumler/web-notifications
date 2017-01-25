@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import { routerReducer as routing } from 'react-router-redux'
 import { reducer as form } from 'redux-form'
+import { reducer as notifications } from 'react-notification-system-redux'
 
 import { initialState } from './selectors'
 import * as ActionTypes from './actions'
@@ -28,6 +29,7 @@ const postReducer = (state = initialState, action) => {
 const reducer = combineReducers({
   routing,
   form,
+  notifications,
   posts: postReducer
 })
 

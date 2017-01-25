@@ -1,6 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import { routerMiddleware } from 'react-router-redux'
 import createSagaMiddleware from 'redux-saga'
+import createSocketIoMiddleware from 'redux-socket.io'
+import io from 'socket.io-client'
 
 import sagas from './sagas'
 import reducer from './reducers'
@@ -8,9 +10,11 @@ import reducer from './reducers'
 const configureStore = (initialState, history) => {
   const hasWindow = typeof window !== 'undefined'
   const sagaMiddleware = createSagaMiddleware()
+  let socket = io('http://localhost:8080')
+  let socketIoMiddleware = createSocketIoMiddleware(socket, "server/")
 
   const finalCreateStore = compose(
-    applyMiddleware(sagaMiddleware, routerMiddleware(history)),
+    applyMiddleware(sagaMiddleware, socketIoMiddleware, routerMiddleware(history)),
     hasWindow && window.devToolsExtension ? window.devToolsExtension() : (f) => f
   )(createStore)
 

@@ -27,3 +27,5 @@ export const postCreate = {
   success: (data) => action(POST_CREATE.SUCCESS, { data }),
   failure: (error) => action(POST_CREATE.FAILURE, { error })
 }
+
+export const sendMessage = (data) => action('server/sendMessage', { data })

@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
 import { routerReducer as routing } from 'react-router-redux'
+import { reducer as form } from 'redux-form'
 
 import { initialState } from './selectors'
 import * as ActionTypes from './actions'
@@ -26,6 +27,7 @@ const postReducer = (state = initialState, action) => {
 
 const reducer = combineReducers({
   routing,
+  form,
   posts: postReducer
 })
 

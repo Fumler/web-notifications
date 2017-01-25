@@ -23,7 +23,7 @@ export const postList = {
 }
 
 export const postCreate = {
-  request: (data) => action(POST_CREATE.REQUEST, { data }),
+  request: (data, resolve, reject) => action(POST_CREATE.REQUEST, { data, resolve, reject }),
   success: (data) => action(POST_CREATE.SUCCESS, { data }),
   failure: (error) => action(POST_CREATE.FAILURE, { error })
 }

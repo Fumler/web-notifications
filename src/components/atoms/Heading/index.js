@@ -6,7 +6,6 @@ import { fonts, colors } from 'components/globals'
 export const fontSize = ({ level }) => `${0.75 + (1 * (1 / level))}rem`
 
 const styles = css`
-  font-family: ${fonts.heading};
   font-weight: 500;
   font-size: ${fontSize};
   margin: 0;

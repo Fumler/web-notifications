@@ -22,8 +22,7 @@ const onSubmit = (data, dispatch) => new Promise((resolve, reject) => {
       }
     },
     level: 'info'
-  })
-  )
+  }))
 })
 
 export default reduxForm({

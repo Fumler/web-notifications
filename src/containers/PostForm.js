@@ -6,9 +6,11 @@ import { PostForm } from 'components'
 
 const PostFormContainer = props => <PostForm {...props} />
 
-const onSubmit = (data, dispatch) => new Promise((resolve, reject) => {
-  dispatch(postCreate.request(data, resolve, reject))
-})
+const onSubmit = (data, dispatch) => {
+  return new Promise((resolve, reject) => {
+    dispatch(postCreate.request(data, resolve, reject))
+  })
+}
 
 export default reduxForm({
   form: 'PostForm',

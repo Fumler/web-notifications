@@ -14,15 +14,16 @@ const StyledButton = styled.button`
   height: 40px;
 
   &:hover {
-    background: #555;
+    background: #777;
   }
 
   &:active {
-    background: #555;
+    background: #777;
   }
 
   &:disabled {
     cursor: not-allowed;
+    background: #777;
   }
 `
 

@@ -34,4 +34,4 @@ yarn run server # run node api server
 
 ## ISSUES
 
-- [ ] Fix issue where createPost promise never completes so createPost form doesn't have to be reset every time
+- [x] Fix issue where createPost promise never completes so createPost form doesn't have to be reset every time

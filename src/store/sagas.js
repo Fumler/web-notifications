@@ -4,12 +4,14 @@ import axios from 'axios'
 
 const { postList, postCreate, postFetch } = actions
 
-export function* createPost(newData) {
+export function* createPost(newData, resolve, reject) {
   try {
     const { data } = yield call(axios.post, '/api/articles', newData)
     yield put(postCreate.success(data))
+    yield call(resolve)
   } catch (e) {
     yield put(postCreate.failure(e))
+    yield call(reject)
   }
 }
 
@@ -34,8 +36,8 @@ export function* fetchPost(id) {
 
 export function* watchPostCreateRequest() {
   while (true) {
-    const { data } = yield take(actions.POST_CREATE.REQUEST)
-    yield call(createPost, data)
+    const { data, resolve, reject } = yield take(actions.POST_CREATE.REQUEST)
+    yield call(createPost, data, resolve, reject)
   }
 }
 

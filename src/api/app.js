@@ -23,6 +23,7 @@ io.on('connection', (socket) => {
         if (action.type === 'server/sendMessage') {
             console.log("sendMessage: " + action.data)
             io.emit('action', { type: 'RNS_SHOW_NOTIFICATION', ...action.data.opts, uid: Date.now(), level: action.data.level || 'info' })
+            io.emit('action', { type: 'POST_LIST_REQUEST'})
         }
     })
 })

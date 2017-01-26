@@ -11,7 +11,7 @@ yarn run server # run node api server
 
 - [ ] Push API - service workers (https://developer.mozilla.org/en-US/docs/Web/API/Push_API)
 - [x] Backup solution for sending notifications to all users with socket.io
-- [ ] Refresh homepage when notification is sent to all users
+- [x] Refresh homepage when notification is sent to all users
 - [x] Add article posts
 - [ ] Edit article posts (implemented in server only)
 - [ ] Delete article posts (implemented in server only)

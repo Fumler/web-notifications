@@ -7,6 +7,8 @@ injectGlobal`
 
   body {
     margin: 0;
+    background: #eee;
+    box-sizing: border-box;
     font-family: ${fonts.primary};
   }
 `

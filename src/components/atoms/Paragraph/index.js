@@ -1,10 +1,15 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-const Paragraph = styled.p`
+const styles = css`
   font-size: 1rem;
-  line-height: 1.3;
-  margin: 1rem 0 0;
+  line-height: 1.6;
+  padding-left: 24px;
+  padding-right: 24px;
+  color: #666;
+  
 `
+
+const Paragraph = styled.p`${styles}`
 
 export default Paragraph

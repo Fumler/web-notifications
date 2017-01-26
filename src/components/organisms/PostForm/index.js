@@ -18,9 +18,11 @@ const PostForm = ({ handleSubmit, submitting }) => {
     <Form onSubmit={handleSubmit}>
       <Heading level={2}>Create a post</Heading>
       <Label htmlFor="title">Title</Label>
-      <Field name="title" component={Input} />
+      <Field name="title" type="input" component={Input}  />
       <Label htmlFor="content">Content</Label>
       <Field name="content" type="textarea" component={Input} />
+      <Label htmlFor="imageUrl">Image URL</Label>
+      <Field name="imageUrl" type="input" component={Input} />
       <Button type="submit" disabled={submitting} primary>Create</Button>
     </Form>
   )

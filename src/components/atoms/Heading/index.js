@@ -3,14 +3,13 @@ import styled, { css } from 'styled-components'
 
 import { fonts, colors } from 'components/globals'
 
-export const fontSize = ({ level }) => `${0.75 + (1 * (1 / level))}rem`
+export const fontSize = ({ level }) => `${0.75 + (1.6 * (1 / level))}rem`
 
 const styles = css`
   font-weight: 500;
   font-size: ${fontSize};
-  margin: 0;
-  margin-top: 0.8em;
-  margin-bottom: 0.5em;
+  padding: 12px 24px;
+
 `
 
 const Heading = styled(({ level = 1, children, ...props }) =>

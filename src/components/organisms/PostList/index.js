@@ -4,9 +4,6 @@ import styled from 'styled-components'
 import { Post } from 'components'
 
 const Wrapper = styled.div`
-  & > * {
-    margin: 1rem;
-  }
 `
 
 const PostList = ({ list, ...props }) => {

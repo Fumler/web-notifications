@@ -5,7 +5,7 @@ import { fonts } from 'components/globals'
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 3.75rem;
+  padding: 64px 0;
   min-height: 100vh;
   box-sizing: border-box;
 `
@@ -20,7 +20,7 @@ const Header = styled.header`
 
 const Content = styled.section`
   width: 100%;
-  margin: 2rem auto;
+  margin: 0 auto;
   box-sizing: border-box;
   max-width: 920px;
 

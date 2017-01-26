@@ -2,6 +2,7 @@ import React from 'react'
 import { reduxForm } from 'redux-form'
 import { postCreate, sendMessage } from 'store/actions'
 import Notifications from 'react-notification-system-redux'
+import { browserHistory } from 'react-router'
 
 import { PostForm } from 'components'
 
@@ -17,7 +18,7 @@ const onSubmit = (data, dispatch) => new Promise((resolve, reject) => {
       autoDismiss: 5,
       action: {
         label: 'Ok',
-        callback: () => alert('clicked')
+          callback: () => null
       }
     },
     level: 'info'

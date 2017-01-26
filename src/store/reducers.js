@@ -21,6 +21,11 @@ const postReducer = (state = initialState, action) => {
         ...state,
         list: [action.data, ...state.list]
       }
+    case ActionTypes.POST_FETCH.SUCCESS:
+      return {
+        ...state,
+        activePost: action.post
+      }
     default:
       return state
   }

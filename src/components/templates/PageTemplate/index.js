@@ -7,6 +7,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   padding-top: 3.75rem;
   min-height: 100vh;
+  box-sizing: border-box;
 `
 
 const Header = styled.header`
@@ -20,6 +21,8 @@ const Header = styled.header`
 const Content = styled.section`
   width: 100%;
   margin: 2rem auto;
+  box-sizing: border-box;
+  max-width: 920px;
 
 `
 

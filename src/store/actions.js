@@ -11,6 +11,7 @@ function createRequestTypes(base) {
 
 export const POST_LIST = createRequestTypes('POST_LIST')
 export const POST_CREATE = createRequestTypes('POST_CREATE')
+export const POST_FETCH = createRequestTypes('POST_FETCH')
 
 function action(type, payload = {}) {
   return {type, ...payload}
@@ -26,6 +27,12 @@ export const postCreate = {
   request: (data, resolve, reject) => action(POST_CREATE.REQUEST, { data, resolve, reject }),
   success: (data) => action(POST_CREATE.SUCCESS, { data }),
   failure: (error) => action(POST_CREATE.FAILURE, { error })
+}
+
+export const postFetch = {
+  request: (id) => action(POST_FETCH.REQUEST, id),
+  success: (post) => action(POST_FETCH.SUCCESS, { post }),
+  failure: (error) => action(POST_FETCH.FAILURE, { error })
 }
 
 export const sendMessage = (data) => action('server/sendMessage', { data })

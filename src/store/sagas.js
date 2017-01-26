@@ -2,7 +2,7 @@ import { take, put, call, fork } from 'redux-saga/effects'
 import * as actions from './actions'
 import axios from 'axios'
 
-const { postList, postCreate } = actions
+const { postList, postCreate, postFetch } = actions
 
 export function* createPost(newData) {
   try {
@@ -22,6 +22,16 @@ export function* listPosts() {
   }
 }
 
+export function* fetchPost(id) {
+  try { 
+    const { data } = yield call(axios.get, '/api/articles/' + id)
+    yield put(postFetch.success(data))
+  } catch (e) {
+    yield put(postFetch.failure(e))
+  }
+}
+
+
 export function* watchPostCreateRequest() {
   while (true) {
     const { data } = yield take(actions.POST_CREATE.REQUEST)
@@ -36,7 +46,15 @@ export function* watchPostListRequest() {
   }
 }
 
+export function* watchPostFetchRequest() {
+  while (true) {
+    const { id } = yield take(actions.POST_FETCH.REQUEST)
+    yield call(fetchPost, id)
+  }
+}
+
 export default function* () {
   yield fork(watchPostCreateRequest)
   yield fork(watchPostListRequest)
+  yield fork(watchPostFetchRequest)
 }

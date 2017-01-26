@@ -9,6 +9,9 @@ const articleSchema = new Schema({
   },
   content: {
     type: String
+  },
+  imageUrl: {
+    type: String
   }
 }, {
   timestamps: true
@@ -21,6 +24,7 @@ articleSchema.methods = {
       author: this.author,
       title: this.title,
       content: this.content,
+      imageUrl: this.imageUrl,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt
     }
